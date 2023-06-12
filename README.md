@@ -239,4 +239,4 @@ Here is the result obtained by concatenating all the produced images into one gi
 Sarajevo, Bosnia and Herzegovina
 
 
-[FelicientC]([http://msl.cs.illinois.edu/~lavalle/papers/Lav98c.pdf](https://github.com/FelicienC/RRT-Dubins)) "RRT-Dubins"
+[FelicientC]([http://msl.cs.illinois.edu/~lavalle/papers/Lav98c.pdf](https://github.com/FelicienC/RRT-Dubins)) "RRT-Dubins" https://github.com/FelicienC/RRT-Dubins
