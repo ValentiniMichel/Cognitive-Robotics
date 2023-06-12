@@ -230,7 +230,7 @@ Here is the result obtained by concatenating all the produced images into one gi
 ##### Dynamic Environment moving
 
 <p align="center">
-  <img src="code/moving.gif">
+  <img src="code/dyn_RRT.gif">
 </p>
 
 ## References
