@@ -50,8 +50,8 @@ In this class is possible to modify the #Radius curvatures, is the radius of the
 
 from dubins import Dubins
 
-# We initialize the planner with the turn radius and the desired distance between consecutive points
-local_planner = Dubins(radius=2, point_separation=.5)
+# We initialize the planner with the turn radius, the desired distance between consecutive points, and robot_diameter
+local_planner = Dubins(radius=2, point_separation=.5, robot_diameter=10)
 
 # We generate two points, x, y, psi
 start = (0, 0, 0) # heading east
@@ -75,9 +75,9 @@ plt.plot(path[:, 0], path[:, 1])
 
 ### How does it work ?
 
-The idea behind a RRT is to incrementally construct a search tree that gradually improves its resolution so that in the limit,  it densely covers the space.  The tree starts rooted at a starting configuration, and grows by using random samples from the search space. As each sample is drawn, a connection is attempted between it and the nearest state in the tree. If the connection is feasible (passes entirely through free space and obeys all constraints), this results in the addition of the new state to the tree.
+A Rapidly-exploring Random Tree (RRT) follows an incremental approach to construct a search tree that gradually enhances its resolution, aiming to densely cover the space in the long run. The tree initiates from a starting configuration and expands by utilizing random samples from the search space. When a sample is drawn, an attempt is made to establish a connection between it and the nearest state in the tree. If the connection is feasible, meeting the requirements of passing entirely through free space and adhering to all constraints, the new state is added to the tree.
 
-With uniform sampling of the search space, the probability of expanding an existing state is proportional to the size of its Voronoi region, (i.e. the ensemble of points closer to this state then to any other state of the graph). As the largest Voronoi regions belong to the states on the frontier of the search, this means that the tree preferentially expands towards large unsearched areas, and therefore rapidly expands.
+By employing uniform sampling of the search space, the likelihood of expanding an existing state is directly proportional to the size of its Voronoi region. The Voronoi region represents the collection of points that are closer to this state than to any other state in the graph. Since the states located on the frontier of the search possess the largest Voronoi regions, the tree naturally extends its expansion towards extensive unexplored areas. Consequently, the tree expands rapidly, effectively exploring the search space.
 
 ### Usage
 
@@ -86,7 +86,7 @@ In order to use it, the environment needs to be defined first. To start, two typ
 
 #### Static Environment
 
-In the static environment, the obstacles are polygonal and are stored in a binary search tree in order to increase the speed of the colision check.
+In the static environment, the obstacles are polygonal and are stored in a binary search tree in order to increase the speed of the colision check we can modify the number of the obstacles here before to execute the RRT code.
 The following code initializes an Environment:
 ```python
 from environment import StaticEnvironment
@@ -102,7 +102,9 @@ env.plot()
 
 ```python
 # We initialize the tree with the environment
-rrt = RRT(env)
+# The precision needed to stop the algorithm. In the form (delta_x, delta_y, delta_psi)
+# the float diameter of the circular robot
+rrt = RRT(env, (5, 5, 1), diameter)
 
 # We select two random points in the free space as a start and final node
 start = env.random_free_space()
