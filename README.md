@@ -148,6 +148,21 @@ rrt.plot(nodes=True)
   <img src="docs/output.png">
 </p>
 
+#### Low or High dimentional space works better? 
+In the code is possible to execute the 'test_rrt_loop' function, that is used to tested the rrt method for ten epochs in high and low dimensional space and plotting the results: 
+
+
+<p align="center">
+  <img src="docs/Graph.png">
+</p>
+
+Here is a possible visualization of the average distance that can be achieved between high and low dimensional spaces.
+
+The graph depicts two axes: one representing the epochs executed and the other representing the average distance. As the dimensionality increases, the average distance between points tends to decrease.
+
+
+
+
 #### Dynamic Environment
 In the dynamic environement, two options are available: the obstacles can either move or stay static. In both cases, the tree is pruned of the unreachable nodes once they are passed.
 
