@@ -84,7 +84,7 @@ By employing uniform sampling of the search space, the likelihood of expanding a
 In this project we also add a costrain about the robot, infact it is consider like a circular robot with a dimension of his area on the environment. That area is defined for each function specifying the diameter of the shape. 
 This imply that during the RRT algorithm, will not consider the path of the nodes where the shape of the robot touching the objects in the environment.  
 
-### differences between RRT and RRT-Dubin
+### Differences between RRT and RRT-Dubin
 The key difference between RRT (Rapidly-exploring Random Tree) and RRT Dubin lies in the type of motion that the trees consider.
 
 #### RRT (Rapidly-exploring Random Tree):
