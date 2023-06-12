@@ -81,6 +81,9 @@ A Rapidly-exploring Random Tree (RRT) follows an incremental approach to constru
 
 By employing uniform sampling of the search space, the likelihood of expanding an existing state is directly proportional to the size of its Voronoi region. The Voronoi region represents the collection of points that are closer to this state than to any other state in the graph. Since the states located on the frontier of the search possess the largest Voronoi regions, the tree naturally extends its expansion towards extensive unexplored areas. Consequently, the tree expands rapidly, effectively exploring the search space.
 
+In this project we also add a costrain about the robot, infact it is consider like a circular robot with a dimension of his area on the environment. That area is defined for each function specifying the diameter of the shape. 
+This imply that during the RRT algorithm, will not consider the path of the nodes where the shape of the robot touching the objects in the environment.  
+
 ### differences between RRT and RRT-Dubin
 The key difference between RRT (Rapidly-exploring Random Tree) and RRT Dubin lies in the type of motion that the trees consider.
 
