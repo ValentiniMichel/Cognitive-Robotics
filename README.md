@@ -152,7 +152,7 @@ rrt.plot(nodes=True)
 </p>
 
 #### Low or High dimentional space works better? 
-In the code is possible to execute the 'test_rrt_loop' function, that is used to tested the #RRT method for ten epochs in high and low dimensional space and plotting the results: 
+In the code is possible to execute the 'test_rrt_loop' function, that is used to tested the RRT method for ten epochs in high and low dimensional space and plotting the results: 
 
 
 <p align="center">
