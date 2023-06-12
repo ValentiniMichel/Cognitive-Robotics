@@ -161,7 +161,8 @@ env = DynamicEnvironment((100, 100), 5, moving=False)
 
 ```python
 # We initialize the tree with the environment
-rrt = RRT(env)
+diameter = 5
+rrt = RRT(env, (5, 5, 1), diameter)
 
 start = (50, 1, 1.57) # At the bottom of the environment
 end = (50, 99, 1.57) # At the top of the environment
@@ -197,7 +198,7 @@ for i in range(500):
     rrt.run(end, 2, metric='local')
     # Ploting and generating an image (the most time consuming step)
     env.plot(time, display=False)
-    rrt.plot(file_name='moving'+str(i)+'.png', close=True)
+    rrt.plot(file_name='./images/moving'+str(i)+'.png', close=True, nodes=True)
 ```
 This code executes relatively slowly due to the time needed to plot every single frame with matplotlib.
 Here is the result obtained by concatenating all the produced images into one gif file.
