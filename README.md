@@ -205,13 +205,13 @@ Here is the result obtained by concatenating all the produced images into one gi
 ##### Dynamic Environment static
 
 <p align="center">
-  <img src="docs/static.gif">
+  <img src="code/static.gif">
 </p>
 
 ##### Dynamic Environment moving
 
 <p align="center">
-  <img src="docs/moving.gif">
+  <img src="code/moving.gif">
 </p>
 
 ## References
