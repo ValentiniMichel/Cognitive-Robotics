@@ -216,5 +216,8 @@ Here is the result obtained by concatenating all the produced images into one gi
 
 ## References
 
-[Dino Živojević, Jasmin Velagić](http://msl.cs.illinois.edu/~lavalle/papers/Lav98c.pdf) "Path Planning for Mobile Robot using Dubins-curve based RRT Algorithm with Differential Constraints" 61 st International Symposium ELMAR-2019, 23-25 September 2019, Zadar, CroatiaUniversity,Faculty of Electrical Engineering/University of Sarajevo
+[Dino Živojević, Jasmin Velagić] "Path Planning for Mobile Robot using Dubins-curve based RRT Algorithm with Differential Constraints" 61 st International Symposium ELMAR-2019, 23-25 September 2019, Zadar, CroatiaUniversity,Faculty of Electrical Engineering/University of Sarajevo
 Sarajevo, Bosnia and Herzegovina
+
+
+[FelicientC]([http://msl.cs.illinois.edu/~lavalle/papers/Lav98c.pdf](https://github.com/FelicienC/RRT-Dubins)) "RRT-Dubins"
