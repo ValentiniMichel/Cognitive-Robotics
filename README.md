@@ -68,7 +68,7 @@ import matplotlib.pyplot as plt
 plt.plot(path[:, 0], path[:, 1])
 ```
 <p align="center">
-  <img src="docs/img/LSL_example.png">
+  <img src="docs/1200px-Dubins1.svg.png">
 </p>
 
 ## RRT
@@ -97,7 +97,7 @@ env = StaticEnvironment((100, 100), 100)
 env.plot()
 ```
 <p align="center">
-  <img src="docs/img/without_nodes.png">
+  <img src="docs/without_nodes.png">
 </p>
 
 ```python
