@@ -202,12 +202,19 @@ for i in range(500):
 This code executes relatively slowly due to the time needed to plot every single frame with matplotlib.
 Here is the result obtained by concatenating all the produced images into one gif file.
 
+##### Dynamic Environment static
+
 <p align="center">
-  <img src="docs/img/dyn_RRT.gif">
+  <img src="docs/static.gif">
+</p>
+
+##### Dynamic Environment moving
+
+<p align="center">
+  <img src="docs/moving.gif">
 </p>
 
 ## References
 
-[Steven M. LaValle](http://msl.cs.illinois.edu/~lavalle/papers/Lav98c.pdf) "Rapidly-Exploring Random Trees: A New Tool for Path Planning" 1998, tech. rpt C.S.Dept, Iowa State University
-
-[Wikipedia](https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree)
+[Dino Živojević, Jasmin Velagić](http://msl.cs.illinois.edu/~lavalle/papers/Lav98c.pdf) "Path Planning for Mobile Robot using Dubins-curve based RRT Algorithm with Differential Constraints" 61 st International Symposium ELMAR-2019, 23-25 September 2019, Zadar, CroatiaUniversity,Faculty of Electrical Engineering/University of Sarajevo
+Sarajevo, Bosnia and Herzegovina
