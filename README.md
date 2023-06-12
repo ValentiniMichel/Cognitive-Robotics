@@ -120,7 +120,7 @@ env.plot()
 rrt.plot(nodes=True)
 ```
 <p align="center">
-  <img src="docs/img/with_nodes.png">
+  <img src="docs/otuput.png">
 </p>
 
 #### Dynamic Environment
