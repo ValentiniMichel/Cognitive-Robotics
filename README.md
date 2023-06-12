@@ -22,6 +22,8 @@ Cognitive Robotics's Miniproject : RRT - planning for "Dubin Car"
 
 
 ## Setup
+To run the code, simply download the repository and execute the 'script.ipynb' file. It contains various modules from which you can individually view the output for each function.
+The execution may take some time due to the high number of iterations for certain functions.
 
 ## Requirements
 
@@ -78,6 +80,29 @@ plt.plot(path[:, 0], path[:, 1])
 A Rapidly-exploring Random Tree (RRT) follows an incremental approach to construct a search tree that gradually enhances its resolution, aiming to densely cover the space in the long run. The tree initiates from a starting configuration and expands by utilizing random samples from the search space. When a sample is drawn, an attempt is made to establish a connection between it and the nearest state in the tree. If the connection is feasible, meeting the requirements of passing entirely through free space and adhering to all constraints, the new state is added to the tree.
 
 By employing uniform sampling of the search space, the likelihood of expanding an existing state is directly proportional to the size of its Voronoi region. The Voronoi region represents the collection of points that are closer to this state than to any other state in the graph. Since the states located on the frontier of the search possess the largest Voronoi regions, the tree naturally extends its expansion towards extensive unexplored areas. Consequently, the tree expands rapidly, effectively exploring the search space.
+
+### differences between RRT and RRT-Dubin
+The key difference between RRT (Rapidly-exploring Random Tree) and RRT Dubin lies in the type of motion that the trees consider.
+
+#### RRT (Rapidly-exploring Random Tree):
+
+ - RRT is a sampling-based algorithm commonly used for motion planning in robotics.
+ - It constructs a tree structure incrementally by randomly sampling the configuration space and expanding the tree towards unexplored regions.
+ - The connections between the nodes in the tree are made by attempting to connect the sampled configuration to the nearest existing node in the tree.
+ - RRT is suitable for systems with continuous and non-holonomic motion, such as wheeled robots or vehicles.
+ - It does not consider any specific motion model or constraints, allowing for general exploration of the configuration space.
+ - RRT can handle systems with both translational and rotational motions, but it may not guarantee optimality in the generated paths.
+
+#### RRT Dubin:
+
+ - RRT Dubin is an extension of the RRT algorithm specifically designed for systems with Dubin's car-like motion constraints.
+ - Dubin's car is a simplified model that represents a vehicle with fixed forward speed and a limited turning radius.
+ - RRT Dubin takes into account these motion constraints to generate feasible paths for a Dubin's car.
+ - The connections between nodes in the tree are made using Dubin's maneuvers, which are the shortest paths considering the car's motion model.
+ - RRT Dubin guarantees the optimality of the generated paths with respect to the Dubin's car model.
+ - This variant of RRT is commonly used in applications involving car-like robots or vehicles where the turning radius is restricted.
+
+In summary, RRT is a general-purpose sampling-based algorithm for motion planning, while RRT Dubin specifically caters to systems with Dubin's car-like motion constraints, ensuring optimality in the generated paths within those constraints.
 
 ### Usage
 
