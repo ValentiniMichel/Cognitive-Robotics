@@ -1,5 +1,6 @@
 # Cognitive-Robotics
-Cognitive Robotics's Miniproject : RRT - planning for "Dubin Car"
+Cognitive Robotics's Miniproject : RRT - planning for "Dubin Car".
+Extention of the project RRT_Dubins of FelicienC on GitHub (https://github.com/FelicienC/RRT-Dubins)
 
 ## Table Of Contents
 
