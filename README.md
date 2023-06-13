@@ -2,6 +2,16 @@
 Cognitive Robotics's Miniproject : RRT - planning for "Dubin Car".
 Extention of the project RRT_Dubins of FelicienC on GitHub (https://github.com/FelicienC/RRT-Dubins)
 
+## Miniproject 2: 
+Goals: 
+ - Expalin the geomentry of the robot and how RRT is working 
+ - Inspect the Code RRT_algorithm and modify it 
+ - Generate comment in different situation and expalin the differences between the orignal algotirhm and RRT-Dubin car
+ - Test the code in high and low dimentional space, with different test about the radius of curvature 
+ - Extend the code to work also for a circular Robot of diameter D
+ - Create a Jupeter notebook file where all is executable
+
+
 ## Table Of Contents
 
 - [RRT Dubins](#RRT-Dubins)
