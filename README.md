@@ -4,10 +4,10 @@ Extention of the project RRT_Dubins of FelicienC on GitHub (https://github.com/F
 
 ## Miniproject 2: 
 Goals: 
- - Expalin the geomentry of the robot and how RRT is working 
+ - Explain the geomentry of the robot and how RRT is working 
  - Inspect the Code RRT_algorithm and modify it 
- - Generate comment in different situation and expalin the differences between the orignal algotirhm and RRT-Dubin car
- - Test the code in high and low dimentional space, with different test about the radius of curvature 
+ - Generate comment in different situation and explain the differences between the orignal algorithm and RRT-Dubin car
+ - Test the code in high and low dimensional space, with different test about the radius of curvature 
  - Extend the code to work also for a circular Robot of diameter D
  - Create a Jupeter notebook file where all is executable
 
@@ -57,7 +57,7 @@ As we want to have the shortest path among the 6 potential candidates, we comput
 ### Usage 
 
 The Dubins path are implemented in the Dubins class. 
-In this class is possible to modify the Radius curvatures, is the radius of the turn used in all the potential trajectories, the Point-Separation, the distance between points of the trajectories. More points increases the precision of the path but also augments the computation time of the colision check, and the Robot_diameter that is the diameter of the circular robot.
+In this class is possible to modify the Radius curvatures, is the radius of the turn used in all the potential trajectories, the Point-Separation, the distance between points of the trajectories. More points increase the precision of the path but also augments the computation time of the colision check, and the Robot_diameter that is the diameter of the circular robot.
 
 ```python
 
@@ -92,8 +92,8 @@ A Rapidly-exploring Random Tree (RRT) follows an incremental approach to constru
 
 By employing uniform sampling of the search space, the likelihood of expanding an existing state is directly proportional to the size of its Voronoi region. The Voronoi region represents the collection of points that are closer to this state than to any other state in the graph. Since the states located on the frontier of the search possess the largest Voronoi regions, the tree naturally extends its expansion towards extensive unexplored areas. Consequently, the tree expands rapidly, effectively exploring the search space.
 
-In this project we also add a costrain about the robot, infact it is consider like a circular robot with a dimension of his area on the environment. That area is defined for each function specifying the diameter of the shape. 
-This imply that during the RRT algorithm, will not consider the path of the nodes where the shape of the robot touching the objects in the environment.  
+In this project we also add a costrain about the robot, infact it is considered like a circular robot with a dimension of his area on the environment. That area is defined for each function specifying the diameter of the shape. 
+This imply that during the RRT algorithm will not consider the path of the nodes where the shape of the robot touching the objects in the environment.  
 
 ### Differences between RRT and RRT-Dubin
 The key difference between RRT (Rapidly-exploring Random Tree) and RRT Dubin lies in the type of motion that the trees consider.
@@ -172,7 +172,7 @@ In the code is possible to execute the 'test_rrt_loop' function, that is used to
 
 Here is a possible visualization of the average distance that can be achieved between high and low dimensional spaces.
 
-The graph depicts two axes: one representing the epochs executed and the other representing the average distance. As the dimensionality increases, the average distance between points tends to decrease.
+The graph depicts two axes: one representing the epochs executed and the other representing the average distance. As the dimensionality increases, the average distance between points tends to decreases.
 
 
 
