@@ -241,7 +241,7 @@ Here is the result obtained by concatenating all the produced images into one gi
 ##### Dynamic Environment moving
 
 <p align="center">
-  <img src="docs/dyn_RRT.gif">
+  <img src="docs/moving.gif">
 </p>
 
 ## References
