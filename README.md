@@ -47,7 +47,7 @@ As we want to have the shortest path among the 6 potential candidates, we comput
 ### Usage 
 
 The Dubins path are implemented in the Dubins class. 
-In this class is possible to modify the #Radius curvatures, is the radius of the turn used in all the potential trajectories, the #Point-Separation, The distance between points of the trajectories. More points increases the precision of the path but also augments the computation time of the colision check, and the #Robot_diameter that is the diameter of the circular robot.
+In this class is possible to modify the Radius curvatures, is the radius of the turn used in all the potential trajectories, the Point-Separation, the distance between points of the trajectories. More points increases the precision of the path but also augments the computation time of the colision check, and the Robot_diameter that is the diameter of the circular robot.
 
 ```python
 
