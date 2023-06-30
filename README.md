@@ -60,17 +60,11 @@ These combinations represent the shortest paths that a vehicle with a fixed turn
 
 Here we plot some image of how these six configuratio type woks in way to move between one node and another:
 <p align="center">
-  <img src="docs/1200px-Dubins1.svg.png">
+  <img src="docs/lsr.png"><img src="docs/lrl.png"> <img src="docs/lsl.png"> 
+ <img src="docs/rlr.png"><img src="docs/rsl.png"><img src="docs/rsr.png">
 </p>
 
 
-| Image 1 | Image 2 | Image 3 |
-|:-------:|:-------:|:-------:|
-| ![Image 1](<img src="docs/lrl.png">) | ![Image 2](<img src="docs/lsl.png">) | ![Image 3](<img src="docs/lsr.png">) |
-| Image 4 | Image 5 | Image 6 |
-| ![Image 4](<img src="docs/rlr.png">) | ![Image 5](<img src="docs/rsl.png">) | ![Image 6](<img src="docs/rsr.png">) |
-
- 
 ### Usage 
 
 The Dubins path are implemented in the Dubins class. 
