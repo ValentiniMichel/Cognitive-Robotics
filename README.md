@@ -91,9 +91,7 @@ import matplotlib.pyplot as plt
 
 plt.plot(path[:, 0], path[:, 1])
 ```
-<p align="center">
-  <img src="docs/1200px-Dubins1.svg.png">
-</p>
+
 
 ## RRT
 
@@ -128,6 +126,9 @@ The key difference between RRT (Rapidly-exploring Random Tree) and RRT Dubin lie
  - This variant of RRT is commonly used in applications involving car-like robots or vehicles where the turning radius is restricted.
 
 In summary, RRT is a general-purpose sampling-based algorithm for motion planning, while RRT Dubin specifically caters to systems with Dubin's car-like motion constraints, ensuring optimality in the generated paths within those constraints.
+
+### TODO generate image
+
 
 ### Usage
 
