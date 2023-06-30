@@ -45,7 +45,9 @@ The execution may take some time due to the high number of iterations for certai
 
 ## Dubins path
 
-Dubins path refers to the shortest curve that connects two points in the two-dimensional Euclidean plane if only one direction of movement is permitted (the vehicle can only go forward). This type of path is necessarly in the form of one of 6 types, combination of right turns (**R**), left turns (**L**) and straight segments (**S**): **RLR, LRL, LSR, RSL, LSL, RSR**.
+Dubins path refers to the shortest curve that connects two points in the two-dimensional Euclidean plane if only one direction of movement is permitted (the vehicle can only go forward). The reason the Dubins path has only six types of combinations is due to the restrictions imposed by the model. This type of path is necessarly in the form of one of 6 types, combination of right turns (**R**), left turns (**L**) and straight segments (**S**): **RLR, LRL, LSR, RSL, LSL, RSR**.
+
+
 
 ### How does it work ?
 
@@ -54,6 +56,21 @@ As we want to have the shortest path among the 6 potential candidates, we comput
   2. **LSR** and **RSL** : Two turns in opposite directions separated by a straight segment
   3. **RLR** and **LRL** : Three turns
 
+These combinations represent the shortest paths that a vehicle with a fixed turning radius can take from an initial configuration to a target configuration. By restricting the vehicle's movements to these combinations, the Dubins path planning problem becomes simpler and more computationally efficient.
+
+Here we plot some image of how these six configuratio type woks in way to move between one node and another:
+<p align="center">
+  <img src="docs/1200px-Dubins1.svg.png">
+</p>
+
+
+| Image 1 | Image 2 | Image 3 |
+|:-------:|:-------:|:-------:|
+| ![Image 1](<img src="docs/lrl.png">) | ![Image 2](<img src="docs/lsl.png">) | ![Image 3](<img src="docs/lsr.png">) |
+| Image 4 | Image 5 | Image 6 |
+| ![Image 4](<img src="docs/rlr.png">) | ![Image 5](<img src="docs/rsl.png">) | ![Image 6](<img src="docs/rsr.png">) |
+
+ 
 ### Usage 
 
 The Dubins path are implemented in the Dubins class. 
