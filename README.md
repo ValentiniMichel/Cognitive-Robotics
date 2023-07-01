@@ -152,8 +152,22 @@ The key difference between RRT (Rapidly-exploring Random Tree) and RRT Dubin lie
 
 In summary, RRT is a general-purpose sampling-based algorithm for motion planning, while RRT Dubin specifically caters to systems with Dubin's car-like motion constraints, ensuring optimality in the generated paths within those constraints.
 
-### Show 4 kind of test
+### Graph of RRT and RR-Dubin 
 
+<p align="center">
+  <img src="docs/difference rrt original and dublin.png">
+</p>
+It is possible to observe a straightforward comparison between two algorithms: the original RRT depicted in green and the RRT-Dubins represented in red.
+
+<p align="center">
+  <img src="docs/difference rrt original and dublin2.png">
+</p>
+Both alorithms successfully reach the goal
+
+<p align="center">
+  <img src="docs/difference rrt original and dublin3.png">
+</p>
+A graph where original RRT have succed to reach the goal but RRT-Dubins no
 
 ### Usage
 
