@@ -64,6 +64,31 @@ Here we plot some image of how these six configuratio type woks in way to move b
  <img src="docs/rlr.png"><img src="docs/rsl.png"><img src="docs/rsr.png">
 </p>
 
+### Different kind of metric
+
+The RTT (Round-Trip Time) algorithm supports the utilization of various metrics to measure distances. Initially, it employed two metrics, namely local and Euclidean. However, additional metrics such as Chebyshev, Minkowski, Hamming, and cosine distances have been incorporated to facilitate a comprehensive analysis of this algorithm. By employing these diverse metrics, it becomes possible to discern and appreciate the distinctions in the outcomes yielded by the RTT algorithm.
+
+
+ - Local distance: In the context of the provided code snippet, "local distance" refers to a measure of cost or desirability associated with different options available for each node in the RTT (Round-Trip Time) algorithm. It represents the specific cost or distance metric used within the algorithm, specific to the problem domain or application.
+
+ - Euclidean distance: The Euclidean distance is a measure of the straight-line distance between two points in a two- or multi-dimensional space. It is calculated using the Pythagorean theorem and represents the length of the shortest path between the points.
+
+ - Chebyshev distance: The Chebyshev distance, also known as the chessboard distance, calculates the maximum difference between the coordinates of two points along each dimension. It represents the distance in terms of the number of moves required by a king in a chessboard.
+
+ - Minkowski distance: The Minkowski distance is a generalized distance metric that includes both the Euclidean and Manhattan distances as special cases. It is defined by a parameter "p" and can be used to measure distances in multi-dimensional spaces.
+
+ - Hamming distance: The Hamming distance is used to compare two equal-length strings or binary vectors. It measures the number of positions at which the corresponding elements are different, representing the minimum number of substitutions required to change one string into the other.
+
+ - Cosine distance: The Cosine distance calculates the dissimilarity between two vectors based on the cosine of the angle between them. It is often used to measure the similarity or dissimilarity between documents represented as vectors, where the magnitude and direction of the vectors are taken into account.
+
+Here we plot a graph for 50 epochs for each metric of distant, with radius of curvature equal 5 and number of objects 10: 
+
+
+
+
+
+Here we can view that : ecc..
+
 
 ### Usage 
 
@@ -127,7 +152,7 @@ The key difference between RRT (Rapidly-exploring Random Tree) and RRT Dubin lie
 
 In summary, RRT is a general-purpose sampling-based algorithm for motion planning, while RRT Dubin specifically caters to systems with Dubin's car-like motion constraints, ensuring optimality in the generated paths within those constraints.
 
-### TODO generate image
+### Show 4 kind of test
 
 
 ### Usage
