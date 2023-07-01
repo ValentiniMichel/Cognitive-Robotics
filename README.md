@@ -194,7 +194,11 @@ env.plot()
 # We initialize the tree with the environment
 # The precision needed to stop the algorithm. In the form (delta_x, delta_y, delta_psi)
 # the float diameter of the circular robot
-rrt = RRT(env, (5, 5, 1), diameter)
+# radius to curve
+# point_separation is the distance between points of the trajectories. More points increases
+# the precision of the path but also augments the computation time of the
+# colision check.
+rrt = RRT(env, (5, 5, 1), diameter, radius, point_separation)
 
 # We select two random points in the free space as a start and final node
 start = env.random_free_space()
