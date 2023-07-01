@@ -81,14 +81,13 @@ The RTT (Round-Trip Time) algorithm supports the utilization of various metrics 
 
  - Cosine distance: The Cosine distance calculates the dissimilarity between two vectors based on the cosine of the angle between them. It is often used to measure the similarity or dissimilarity between documents represented as vectors, where the magnitude and direction of the vectors are taken into account.
 
-Here we plot a graph for 50 epochs for each metric of distant, with radius of curvature equal 5 and number of objects 10: 
+This graph illustrates the average distances for each metric. A total of 50 epochs were executed, utilizing a curvature radius of 5 and incorporating 10 objects within the environment:
 
+<p align="center">
+  <img src="docs/graph 50 ephocs.png">
+</p>
 
-
-
-
-Here we can view that : ecc..
-
+It is evident from the data that there is a significant disparity between the Minkowski and Hamming metrics. This indicates that the Hamming metric requires more space to reach the goal, whereas the Minkowski metric exhibits closer distances, indicating a more efficient path.
 
 ### Usage 
 
