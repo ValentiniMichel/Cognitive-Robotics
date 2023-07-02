@@ -239,6 +239,16 @@ As we increase the radius of curvature of our robot, it becomes increasingly not
 
 Here other two example, the first one, increasing only the radius but let the diameter the same (diameter = 5), in the second one the opposite (radius = 4). For that experiment it's set the environment at 30 objects: 
 
+<p align="center">
+  <img src="docs/avarage in different value of radius but same diameter =5 second test.png">
+</p>
+
+Avarage with different radius value and same diameter = 5
+
+<p align="center">
+  <img src="docs/avarage in different value diameter but same radius=4.png">
+</p>
+Avarage with different diameter value and same radius = 4
 
 #### Dynamic Environment
 In the dynamic environement, two options are available: the obstacles can either move or stay static. In both cases, the tree is pruned of the unreachable nodes once they are passed.
