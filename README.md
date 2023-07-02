@@ -151,7 +151,7 @@ The key difference between RRT (Rapidly-exploring Random Tree) and RRT Dubin lie
 
 In summary, RRT is a general-purpose sampling-based algorithm for motion planning, while RRT Dubin specifically caters to systems with Dubin's car-like motion constraints, ensuring optimality in the generated paths within those constraints.
 
-### Graph of RRT and RR-Dubin 
+### Graph of RRT and RRT-Dubin 
 
 <p align="center">
   <img src="docs/difference rrt original and dublin.png">
@@ -228,7 +228,16 @@ Here is a possible visualization of the average distance that can be achieved be
 
 The graph depicts two axes: one representing the epochs executed and the other representing the average distance. As the dimensionality increases, the average distance between points tends to decreases.
 
+#### Avarage of the path, increasing the radius and diameter of the robot 
+In this experiment, we generated with 50 iteration of the avarage path for a RRT-dubins robot increasing the radius and also the diameter of the robot, so increasing 2 costraing at time, the value are [1,2,4,6,8,10,12]:
 
+<p align="center">
+  <img src="docs/avarage in different value of radius1.png">
+</p>
+
+As we increase the radius of curvature of our robot, it becomes increasingly noticeable how easy it is to observe the average improvement, which aligns perfectly with our expectations.
+
+Here other two example, the first one, increasing only the radius but let the diameter the same (diameter = 5), in the second one the opposite (radius = 4): 
 
 
 #### Dynamic Environment
