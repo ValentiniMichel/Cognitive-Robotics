@@ -237,7 +237,7 @@ In this experiment, we generated with 50 iteration of the avarage path for a RRT
 
 As we increase the radius of curvature of our robot, it becomes increasingly noticeable how easy it is to observe the average improvement, which aligns perfectly with our expectations.
 
-Here other two example, the first one, increasing only the radius but let the diameter the same (diameter = 5), in the second one the opposite (radius = 4): 
+Here other two example, the first one, increasing only the radius but let the diameter the same (diameter = 5), in the second one the opposite (radius = 4). For that experiment it's set the environment at 30 objects: 
 
 
 #### Dynamic Environment
