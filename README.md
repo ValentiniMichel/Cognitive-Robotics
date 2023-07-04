@@ -336,3 +336,5 @@ Sarajevo, Bosnia and Herzegovina
 
 
 [FelicientC]([http://msl.cs.illinois.edu/~lavalle/papers/Lav98c.pdf](https://github.com/FelicienC/RRT-Dubins)) "RRT-Dubins" https://github.com/FelicienC/RRT-Dubins
+
+[wolfram](https://demonstrations.wolfram.com/ShortestPathForTheDubinsCar/) Shortest Path for the Dubins Car
