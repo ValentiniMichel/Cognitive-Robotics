@@ -69,9 +69,9 @@ Here we plot some image of how these six configuratio type woks in way to move b
 The RTT (Round-Trip Time) algorithm supports the utilization of various metrics to measure distances. Initially, it employed two metrics, namely local and Euclidean. However, additional metrics such as Chebyshev, Minkowski, Hamming, and cosine distances have been incorporated to facilitate a comprehensive analysis of this algorithm. By employing these diverse metrics, it becomes possible to discern and appreciate the distinctions in the outcomes yielded by the RTT algorithm.
 
 
- - Local distance: In the context of the provided code snippet, "local distance" refers to a measure of cost or desirability associated with different options available for each node in the RTT (Round-Trip Time) algorithm. It represents the specific cost or distance metric used within the algorithm, specific to the problem domain or application.
+ - Local distance: It represents the specific cost or distance metric used within the algorithm in this case is applied using the sort algorithm of the distance.
 
- - Euclidean distance: The Euclidean distance is a measure of the straight-line distance between two points in a two- or multi-dimensional space. It is calculated using the Pythagorean theorem and represents the length of the shortest path between the points.
+ - Euclidean distance: The Euclidean distance is a measure of the straight-line distance between two points in a two dimensional space. It is calculated using the Pythagorean theorem and represents the length of the shortest path between the points.
 
  - Chebyshev distance: The Chebyshev distance, also known as the chessboard distance, calculates the maximum difference between the coordinates of two points along each dimension. It represents the distance in terms of the number of moves required by a king in a chessboard.
 
