@@ -1,3 +1,4 @@
+import math
 import numpy as np
 
 def ortho(vect2d):
@@ -7,6 +8,26 @@ def ortho(vect2d):
 def dist(pt_a, pt_b):
     """Euclidian distance between two (x, y) points"""
     return ((pt_a[0]-pt_b[0])**2 + (pt_a[1]-pt_b[1])**2)**.5
+
+def chebyshev_dist(pt_a, pt_b):
+    """Chebyshev distance between two (x, y) points"""
+    return max(abs(pt_a[0]-pt_b[0]), abs(pt_a[1]-pt_b[1]))
+
+def minkowski_dist(pt_a, pt_b, p=2):
+    """Minkowski distance between two (x, y) points"""
+    return ((abs(pt_a[0]-pt_b[0])**p) + (abs(pt_a[1]-pt_b[1])**p))**(1/p)
+
+def hamming_dist(pt_a, pt_b):
+    """Hamming distance between two binary vectors"""
+    return sum(x != y for x, y in zip(pt_a, pt_b))
+
+def cosine_dist(pt_a, pt_b):
+    """Cosine distance between two vectors"""
+    dot_product = sum(x * y for x, y in zip(pt_a, pt_b))
+    norm_a = math.sqrt(sum(x ** 2 for x in pt_a))
+    norm_b = math.sqrt(sum(y ** 2 for y in pt_b))
+    return 1 - (dot_product / (norm_a * norm_b))
+
 
 class Dubins:
     """

@@ -32,11 +32,12 @@ class StaticEnvironment:
         boundaries of the environnement.
     """
 
-    def __init__(self, dimensions, nb_obstacles):
+    def __init__(self, dimensions, nb_obstacles, dt=0.1):
         self.dimensions = dimensions
         self.obstacles = [Obstacle(dimensions, 0.05*dimensions[0], 5)\
                           for _ in range(nb_obstacles)]
         self.kdtree = KDTree([obs.center for obs in self.obstacles])
+        self.dt = dt
 
     def plot(self, close=False, display=True):
         """
@@ -126,3 +127,6 @@ class StaticEnvironment:
             x = np.random.rand()*self.dimensions[0]
             y = np.random.rand()*self.dimensions[1]
         return x, y, np.random.rand()*np.pi*2
+
+    def delete_obj(self):
+        self.obstacles=[]

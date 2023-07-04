@@ -5,7 +5,7 @@ from collections import deque
 import math
 import matplotlib.pyplot as plt
 import numpy as np
-from dubins import Dubins, dist
+from dubins import Dubins, dist, chebyshev_dist,minkowski_dist,hamming_dist,cosine_dist
 import environment
 
 class Node:
@@ -101,17 +101,18 @@ class RRT:
         from.
     """
 
-    def __init__(self, environment, precision=(5, 5, 1), diameter=10):
+    def __init__(self, environment, precision=(5, 5, 1), diameter=10, radius = 2, point_separation= 1):
         self.nodes = {}
         self.edges = {}
         self.environment = environment
         #radius and point_separation
-        self.local_planner = Dubins(2,1,diameter)
+        self.local_planner = Dubins(radius,point_separation,diameter)
         self.goal = (0, 0, 0)
         self.root = (0, 0, 0)
         self.precision = precision
         self.count_len=0
         self.diameter=diameter
+        self.node_coordinates = []
 
     def set_start(self, start):
         """
@@ -201,12 +202,65 @@ class RRT:
                         Edge(node, sample, path, option[0])
                     
                     self.count_len += option[0]
+                     
                     #print(option[0])
                     if self.in_goal_region(sample):
                         media=self.count_len/len(self.edges)
                         #print("Media path :"+ str(media))
                         return media
                     break
+
+
+
+
+
+
+    def run_average(self, goal, nb_iteration=100, goal_rate=0.1, metric='local'):
+
+        assert len(goal) == len(self.precision)
+        self.goal = goal
+
+        for _ in range(nb_iteration):
+            # Select sample: either the goal or a sample of free space
+            if np.random.rand() > 1 - goal_rate:
+                sample = goal
+            else:
+                sample = self.environment.random_free_space()
+                
+            # Find the closest Node in the tree, with the selected metric
+            options = self.select_options(sample, 10, metric)
+
+            # Now that all the options are sorted from the shortest to the
+            # longest, we can try to connect one node after the other. We stop
+            # after 10 in order to limit computations.
+            for node, option in options:
+                if option[0] == float('inf'):
+                    break
+                
+                path = self.local_planner.generate_points(node, sample, option[1], option[2])
+                
+                for i, point in enumerate(path):
+                    if not self.environment.is_free(point[0], point[1], self.nodes[node].time + i):
+                        break
+                    if self.environment.is_colliding_circle(point[0], point[1], self.diameter):
+                        break
+                else:
+                    # Adding the node
+                    # To compute the time, we use a constant speed of 1 m/s
+                    # As the cost, we use the distance
+                    self.nodes[sample] = Node(sample, self.nodes[node].time + option[0], self.nodes[node].cost + option[0])
+                    self.nodes[node].destination_list.append(sample)
+                    
+                    # Adding the Edge
+                    self.edges[node, sample] = Edge(node, sample, path, option[0])
+
+                    self.count_len += option[0]
+
+                    if self.in_goal_region(sample):
+                        media = self.count_len / len(self.edges)
+                        return media
+                    break
+
 
     def select_options(self, sample, nb_options, metric='local'):
         """
@@ -240,9 +294,20 @@ class RRT:
             # sorted by cost
             options.sort(key=lambda x: x[1][0])
             options = options[:nb_options]
-        else:
+        
+        else :
+            options = []
+            if metric == 'euclidian':
             # Euclidian distance as a metric
-            options = [(node, dist(node, sample)) for node in self.nodes]
+                options = [(node, dist(node, sample)) for node in self.nodes]          
+            elif metric == 'chebyshev_dist':
+                options = [(node, chebyshev_dist(node, sample)) for node in self.nodes] 
+            elif metric == 'minkowski_dist':
+                options = [(node, minkowski_dist(node, sample)) for node in self.nodes]
+            elif metric == 'hamming_dist':
+                options = [(node, hamming_dist(node, sample)) for node in self.nodes]
+            elif metric == 'cosine_dist':
+                options = [(node, cosine_dist(node, sample)) for node in self.nodes]
             options.sort(key=lambda x: x[1])
             options = options[:nb_options]
             new_opt = []
@@ -250,6 +315,8 @@ class RRT:
                 db_options = self.local_planner.all_options(node, sample)
                 new_opt.append((node, min(db_options, key=lambda x: x[0])))
             options = new_opt
+       
+
         return options
 
     def in_goal_region(self, sample):
@@ -280,7 +347,8 @@ class RRT:
         nodes : bool
             If the nodes need to be displayed as well.
         """
-
+        # Plot all the nodes
+        #plt.show()
         if nodes and self.nodes:
             nodes = np.array(list(self.nodes.keys()))
             r = self.diameter / 2
@@ -295,6 +363,8 @@ class RRT:
             plt.savefig(file_name)
         if close:
             plt.close()
+        plt.show()
+        plt.close()
 
     def select_best_edge(self):
         """
