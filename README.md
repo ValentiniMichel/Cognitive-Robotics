@@ -66,7 +66,7 @@ Here we plot some image of how these six configuratio type woks in way to move b
 
 ### Different kind of metric
 
-The RTT (Round-Trip Time) algorithm supports the utilization of various metrics to measure distances. Initially, it employed two metrics, namely local and Euclidean. However, additional metrics such as Chebyshev, Minkowski, Hamming, and cosine distances have been incorporated to facilitate a comprehensive analysis of this algorithm. By employing these diverse metrics, it becomes possible to discern and appreciate the distinctions in the outcomes yielded by the RTT algorithm.
+The RRT (Rapidly-exploring Random Tree) algorithm supports the utilization of various metrics to measure distances. Initially, it employed two metrics, namely local and Euclidean. However, additional metrics such as Chebyshev, Minkowski, Hamming, and cosine distances have been incorporated to facilitate a comprehensive analysis of this algorithm. By employing these diverse metrics, it becomes possible to discern and appreciate the distinctions in the outcomes yielded by the RTT algorithm.
 
 
  - Local distance: It represents the specific cost or distance metric used within the algorithm in this case is applied using the sort algorithm of the distance.
