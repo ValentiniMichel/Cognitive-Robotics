@@ -72,15 +72,23 @@ The RRT (Rapidly-exploring Random Tree) algorithm supports the utilization of va
  - Local distance: It represents the specific cost or distance metric used within the algorithm in this case is applied using the sort algorithm of the distance.
 
  - Euclidean distance: The Euclidean distance is a measure of the straight-line distance between two points in a two dimensional space. It is calculated using the Pythagorean theorem and represents the length of the shortest path between the points.
-
+ <p align="center">
+   <img src="docs/euclidian_distance.png">
+ </p>
  - Chebyshev distance: The Chebyshev distance, also known as the chessboard distance, calculates the maximum difference between the coordinates of two points along each dimension. It represents the distance in terms of the number of moves required by a king in a chessboard.
-
+ <p align="center">
+   <img src="docs/chebyshev_Distance.png">
+ </p>
  - Minkowski distance: The Minkowski distance is a generalized distance metric that includes both the Euclidean and Manhattan distances as special cases. It is defined by a parameter "p" and can be used to measure distances in multi-dimensional spaces.
-
+ <p align="center">
+   <img src="docs/Minkiwski_Distance.png">
+ </p>
  - Hamming distance: The Hamming distance is used to compare two equal-length strings or binary vectors. It measures the number of positions at which the corresponding elements are different, representing the minimum number of substitutions required to change one string into the other.
 
  - Cosine distance: The Cosine distance calculates the dissimilarity between two vectors based on the cosine of the angle between them. It is often used to measure the similarity or dissimilarity between documents represented as vectors, where the magnitude and direction of the vectors are taken into account.
-
+ <p align="center">
+   <img src="docs/cosine_distance.png">
+ </p>
 This graph illustrates the average distances for each metric. A total of 50 epochs were executed, utilizing a curvature radius of 5 and incorporating 10 objects within the environment:
 
 <p align="center">
