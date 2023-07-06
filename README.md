@@ -61,7 +61,6 @@ These combinations represent the shortest paths that a vehicle with a fixed turn
 Here we plot some image of how these six configuratio type woks in way to move between one node and another:
 <p align="center">
   <img src="docs/lsr.png"><img src="docs/lrl.png"> <img src="docs/lsl.png"> 
- <img src="docs/rlr.png"><img src="docs/rsl.png"><img src="docs/rsr.png">
 </p>
 
 ### Different kind of metric
