@@ -18,17 +18,22 @@ Goals:
   * [Requirements](#requirements)
   * [Setup](#setup)
   * [Dubins Path](#dubins-path)
-    + [How it is work?](#how-it-is-work)
+    + [Different kind of metric](Different_kind_of_metric)
     + [Usage](#usage)
-      + [Funcioni vaire](#standalone-execution)
-      + [Execution with Rviz](#execution-with-rviz)
+      + [Static Environment](#Static_Environment)
   * [RRT](#rrt)
-  * [Example tasks](#example-tasks)
-    + [Pick and place](#pick-and-place)
-    + [Cartesian path planning](#cartesian-path-planning)
-  * [Implementation details](#implementation-details)
-    + [Workspace modeling and URDF integration](#workspace-modeling-and-urdf-integration)
-  * [Acknowledgements](#acknowledgements)
+    + [How it is work?](#how-it-is-work)
+    + [Differences between RRT and RRT-Dubin](#Differences_between_RRT_and_RRT-Dubin)
+      + [Original RRT (Rapidly-exploring Random Tree)](#Original_RRT_Rapidly-exploring_Random_Tree))
+      + [RRT Dubin](#RRT_Dubin)
+    + [Graph of RRT and RRT-Dubin](#Graph_of_RRT_and_RRT-Dubin)
+      + [Low or High dimentional space works better?](#Low_or_High_dimentional_space_works-better?)
+      + [Avarage of the path, increasing the radius and diameter of the robot](#Avarage_of_the_path,_increasing_the_radius_and_diameter_of_the_robot)
+      + [Dynamic Environment](#Dynamic_Environment)
+        + [Dynamic Environment static](#Dynamic_Environment_static)
+        + [Dynamic Environment moving](#Dynamic_Environment_moving)
+      + [Description functions](#Description_functions) 
+  * [References](#References)
 
 
 
@@ -185,7 +190,7 @@ This imply that during the RRT algorithm will not consider the path of the nodes
 ### Differences between RRT and RRT-Dubin
 The key difference between RRT (Rapidly-exploring Random Tree) and RRT Dubin lies in the type of motion that the trees consider.
 
-#### RRT (Rapidly-exploring Random Tree):
+#### Original RRT (Rapidly-exploring Random Tree):
 
  - RRT is a sampling-based algorithm commonly used for motion planning in robotics.
  - It constructs a tree structure incrementally by randomly sampling the configuration space and expanding the tree towards unexplored regions.
